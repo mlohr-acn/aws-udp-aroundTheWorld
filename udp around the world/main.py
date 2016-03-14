@@ -1,3 +1,19 @@
+#!/usr/bin/python
+
+__author__ = "Markus Lohr"
+__copyright__ = "Copyright 2016, Markus Lohr"
+__credits__ = ["Markus Lohr"]
+__license__ = "GPL"
+__version__ = "0.0.1"
+__maintainer__ = "Markus Lohr"
+__email__ = "markus.lohr.acn@gmail.com"
+__status__ = "Development"
+__note__ = """Main class of the app: This app reads IPs from AWSdynamoDB and/
+                perioticly a timestamp to this IPs, the destination reply with 
+                two timestamps (received, new send). The sender will add the 
+                fourth an receiving and will put it in another tyble on 
+                AWSdynamoDB for later analytics."""
+
 import socket
 import time
 
