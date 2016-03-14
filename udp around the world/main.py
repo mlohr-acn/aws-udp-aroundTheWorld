@@ -16,6 +16,7 @@ __note__ = """Main class of the app: This app reads IPs from AWSdynamoDB and/
 
 import socket
 import time
+from aws_ddb_writer import AwsRoundTripsATW
 
 isSender =  True
 
@@ -25,9 +26,11 @@ mirrorSRVip = '192.168.178.31'
 PORT = 4711
 mirrorAddr = (mirrorSRVip, PORT)
 sendAddr = (sendToAddress, PORT)
-message = 'This is the message is send at: ' + str(int(round(time.time() * 1000)))
+message = 'This is the message, it is send at: ' + str(int(round(time.time() * 1000)))
 messageID = 0
 nicBuffer = 1024
+
+ddb_connection = AwsRoundTripsATW()
 
 try:
     # Create a UDP socket
@@ -36,7 +39,7 @@ try:
     hostName = socket.gethostname()
 
     while True:
-        message = str(hostName) + ": This is the message #" + str(messageID) + " is send at|" + str(int(round(time.time() * 1000)))
+        message = str(hostName) + ": This is the message #" + str(messageID) + ", it is send at |" + str(int(round(time.time() * 1000)))
         messageID += 1
         
         if isSender:
