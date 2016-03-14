@@ -8,7 +8,7 @@ __version__ = "0.0.1"
 __maintainer__ = "Markus Lohr"
 __email__ = "markus.lohr.acn@gmail.com"
 __status__ = "Development"
-__note__ = """this code will out round trip timestamps in AWSdynamoDB"""
+__note__ = """this code will put round trip timestamps in AWSdynamoDB"""
                 
 import threading
 from __future__ import print_function # Python 2/3 compatibility
